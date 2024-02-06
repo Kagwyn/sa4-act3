@@ -11,4 +11,12 @@ while True:
         print("Congratulations! You guessed the right number.")
         break
     else:
-        guess = input("Try again. What number am I thinking of? Enter 'q' to quit. ")
+        try:
+            guess = int(guess)
+            if guess < int(number):
+                guess = input("Try again. Your guess is too low. Enter 'q' to quit. ")
+            else:
+                guess = input("Try again. Your guess is too high. Enter 'q' to quit. ")
+        except:
+            guess = input("Try again. Your guess was not an integer value. Enter 'q' to quit. ")
+        
